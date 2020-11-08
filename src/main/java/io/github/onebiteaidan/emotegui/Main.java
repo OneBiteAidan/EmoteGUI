@@ -71,14 +71,37 @@ public class Main extends JavaPlugin implements Listener
         if (event.getSlot() == 0)
         {
             //Put in an emote here
-            player.sendMessage("ʕ•ᴥ•ʔ");
+            player.chat("ʕ•ᴥ•ʔ");
         }
 
         if (event.getSlot() == 1)
         {
-            player.sendMessage("bonkbonktesting");
+            player.chat("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ✧ﾟ･: *ヽ(◕ヮ◕ヽ)");
         }
-
+        if (event.getSlot() == 2)
+        {
+            player.chat("ɿ(｡･ɜ･)ɾⓌⓗⓨ?");
+        }
+        if (event.getSlot() == 3)
+        {
+            player.chat("ɿ(｡･ɜ･)ɾⓌⓗⓐⓣ？");
+        }
+        if (event.getSlot() == 4)
+        {
+            player.chat("ᕙ(⇀‸↼‶)ᕗ");
+        }
+        if (event.getSlot() == 5)
+        {
+            player.chat("☜(˚▽˚)☞");
+        }
+        if (event.getSlot() == 6)
+        {
+            player.chat("☜(⌒▽⌒)☞");
+        }
+        if (event.getSlot() == 7)
+        {
+            player.chat("(╯°□°）╯︵ ┻━┻");
+        }
         if (event.getSlot() == 8)
         {
             player.closeInventory();
@@ -88,7 +111,7 @@ public class Main extends JavaPlugin implements Listener
 
     public void createInv() //Defining the GUI and also adding all of the objects inside of it
     {
-        inv = Bukkit.createInventory(null, 27, "Emotes");
+        inv = Bukkit.createInventory(null, 9, "Emotes");
 
         ItemStack item = new ItemStack(Material.PAPER); //Defines the item
         ItemMeta meta = item.getItemMeta(); //Starts the item MetaData
@@ -103,9 +126,45 @@ public class Main extends JavaPlugin implements Listener
 
         //Second Emote
         item.setType(Material.PAPER);
-        meta.setDisplayName(ChatColor.AQUA + "SECOND EMOTE");
+        meta.setDisplayName(ChatColor.AQUA + "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ✧ﾟ･: *ヽ(◕ヮ◕ヽ)");
+        item.setItemMeta(meta);
+        inv.setItem(1, item);
+
+        //Third Emote
+        item.setType(Material.PAPER);
+        meta.setDisplayName(ChatColor.AQUA + "ɿ(｡･ɜ･)ɾⓌⓗⓨ?");
         item.setItemMeta(meta);
         inv.setItem(2, item);
+
+        //Fourth Emote
+        item.setType(Material.PAPER);
+        meta.setDisplayName(ChatColor.AQUA + "ɿ(｡･ɜ･)ɾⓌⓗⓐⓣ？");
+        item.setItemMeta(meta);
+        inv.setItem(3, item);
+
+        //Fifth Emote
+        item.setType(Material.PAPER);
+        meta.setDisplayName(ChatColor.AQUA + "ᕙ(⇀‸↼‶)ᕗ");
+        item.setItemMeta(meta);
+        inv.setItem(4, item);
+
+        //Sixth Emote
+        item.setType(Material.PAPER);
+        meta.setDisplayName(ChatColor.AQUA + "☜(˚▽˚)☞");
+        item.setItemMeta(meta);
+        inv.setItem(5, item);
+
+        //Seventh Emote
+        item.setType(Material.PAPER);
+        meta.setDisplayName(ChatColor.AQUA + "☜(⌒▽⌒)☞");
+        item.setItemMeta(meta);
+        inv.setItem(6, item);
+
+        //Seventh Emote
+        item.setType(Material.PAPER);
+        meta.setDisplayName(ChatColor.AQUA + "(╯°□°）╯︵ ┻━┻");
+        item.setItemMeta(meta);
+        inv.setItem(7, item);
 
         //close button
         item.setType(Material.BARRIER);
