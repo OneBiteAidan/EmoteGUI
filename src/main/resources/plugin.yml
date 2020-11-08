@@ -1,9 +1,10 @@
 main: io.github.onebiteaidan.emotegui.Main
 name: EmoteGUI
-version: 1.0
+version: 1.0.1
 author: OneBiteAidan
 api-version: 1.13
 #Using 1.13 because I am not using anything specific to 1.16
 
 commands:
   emote:
+    aliases: [e, emotes]
