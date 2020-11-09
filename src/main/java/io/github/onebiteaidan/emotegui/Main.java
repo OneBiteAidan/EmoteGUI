@@ -1,11 +1,11 @@
 package io.github.onebiteaidan.emotegui;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,6 +27,7 @@ public class Main extends JavaPlugin implements Listener
     {
         this.getServer().getPluginManager().registerEvents(this, this);
         createInv();
+        saveDefaultConfig();
     }
 
     @Override
@@ -68,11 +69,22 @@ public class Main extends JavaPlugin implements Listener
 
         Player player = (Player) event.getWhoClicked();
 
-        if (event.getSlot() == 0)
+        ConfigurationSection configSection = getConfig().getConfigurationSection("emotes"); //Defines which section of the config I want to enter
+        for(String key : configSection.getKeys(false)) //Accessing the configuration section
         {
-            //Put in an emote here
-            player.chat("ʕ•ᴥ•ʔ");
+
         }
+
+
+
+        switch(event.getSlot())
+        {
+            case 0:
+                clickCommand emote0 = new clickCommand("yonk", 0, player);
+                emote0.chat();
+                break;
+        }
+
 
         if (event.getSlot() == 1)
         {
@@ -105,6 +117,26 @@ public class Main extends JavaPlugin implements Listener
         if (event.getSlot() == 8)
         {
             player.closeInventory();
+        }
+
+    }
+
+    public class clickCommand
+    {
+        String emote;
+        Integer slot;
+        Player player;
+
+        clickCommand(String _emote, Integer _slot, Player _player)
+        {
+            emote = _emote;
+            slot = _slot;
+            player = _player;
+        }
+
+        void chat()
+        {
+            player.chat(emote);
         }
 
     }
