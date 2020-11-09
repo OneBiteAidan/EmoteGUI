@@ -69,56 +69,59 @@ public class Main extends JavaPlugin implements Listener
 
         Player player = (Player) event.getWhoClicked();
 
-        ConfigurationSection configSection = getConfig().getConfigurationSection("emotes"); //Defines which section of the config I want to enter
-        for(String key : configSection.getKeys(false)) //Accessing the configuration section
-        {
-
-        }
-
-
-
         switch(event.getSlot())
         {
             case 0:
                 clickCommand emote0 = new clickCommand("yonk", 0, player);
                 emote0.chat();
+                player.closeInventory();
+                break;
+
+            case 1:
+                clickCommand emote1 = new clickCommand("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ✧ﾟ･: *ヽ(◕ヮ◕ヽ)", 1, player);
+                emote1.chat();
+                player.closeInventory();
+                break;
+
+            case 2:
+                clickCommand emote2 = new clickCommand("ɿ(｡･ɜ･)ɾⓌⓗⓨ?", 2, player);
+                emote2.chat();
+                player.closeInventory();
+                break;
+
+            case 3:
+                clickCommand emote3 = new clickCommand("ɿ(｡･ɜ･)ɾⓌⓗⓐⓣ？", 3, player);
+                emote3.chat();
+                player.closeInventory();
+                break;
+
+            case 4:
+                clickCommand emote4 = new clickCommand("ᕙ(⇀‸↼‶)ᕗ", 4, player);
+                emote4.chat();
+                player.closeInventory();
+                break;
+
+            case 5:
+                clickCommand emote5 = new clickCommand("☜(˚▽˚)☞", 5, player);
+                emote5.chat();
+                player.closeInventory();
+                break;
+
+            case 6:
+                clickCommand emote6 = new clickCommand("☜(⌒▽⌒)☞", 6, player);
+                emote6.chat();
+                player.closeInventory();
+                break;
+
+            case 7:
+                clickCommand emote7 = new clickCommand("(╯°□°）╯︵ ┻━┻", 7, player);
+                emote7.chat();
+                player.closeInventory();
+
+            default: //Used as the close button
+                player.sendMessage(ChatColor.AQUA + "Closing menu.");
                 break;
         }
-
-
-        if (event.getSlot() == 1)
-        {
-            player.chat("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ✧ﾟ･: *ヽ(◕ヮ◕ヽ)");
-        }
-        if (event.getSlot() == 2)
-        {
-            player.chat("ɿ(｡･ɜ･)ɾⓌⓗⓨ?");
-        }
-        if (event.getSlot() == 3)
-        {
-            player.chat("ɿ(｡･ɜ･)ɾⓌⓗⓐⓣ？");
-        }
-        if (event.getSlot() == 4)
-        {
-            player.chat("ᕙ(⇀‸↼‶)ᕗ");
-        }
-        if (event.getSlot() == 5)
-        {
-            player.chat("☜(˚▽˚)☞");
-        }
-        if (event.getSlot() == 6)
-        {
-            player.chat("☜(⌒▽⌒)☞");
-        }
-        if (event.getSlot() == 7)
-        {
-            player.chat("(╯°□°）╯︵ ┻━┻");
-        }
-        if (event.getSlot() == 8)
-        {
-            player.closeInventory();
-        }
-
     }
 
     public class clickCommand
