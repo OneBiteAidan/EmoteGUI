@@ -69,59 +69,42 @@ public class Main extends JavaPlugin implements Listener
 
         Player player = (Player) event.getWhoClicked();
 
-        switch(event.getSlot())
+        clickCommand emote;
+        switch(event.getSlot()) //An example of fallthrough behavior
         {
             case 0:
-                clickCommand emote0 = new clickCommand("yonk", 0, player);
-                emote0.chat();
-                player.closeInventory();
+                emote = new clickCommand("jdjddj", 0, player);
                 break;
-
             case 1:
-                clickCommand emote1 = new clickCommand("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ✧ﾟ･: *ヽ(◕ヮ◕ヽ)", 1, player);
-                emote1.chat();
-                player.closeInventory();
+                emote = new clickCommand("(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ✧ﾟ･: *ヽ(◕ヮ◕ヽ)", 1, player);
                 break;
-
             case 2:
-                clickCommand emote2 = new clickCommand("ɿ(｡･ɜ･)ɾⓌⓗⓨ?", 2, player);
-                emote2.chat();
-                player.closeInventory();
+                emote = new clickCommand("ɿ(｡･ɜ･)ɾⓌⓗⓨ?", 2, player);
                 break;
-
             case 3:
-                clickCommand emote3 = new clickCommand("ɿ(｡･ɜ･)ɾⓌⓗⓐⓣ？", 3, player);
-                emote3.chat();
-                player.closeInventory();
+                emote = new clickCommand("ɿ(｡･ɜ･)ɾⓌⓗⓐⓣ？", 3, player);
                 break;
-
             case 4:
-                clickCommand emote4 = new clickCommand("ᕙ(⇀‸↼‶)ᕗ", 4, player);
-                emote4.chat();
-                player.closeInventory();
+                emote = new clickCommand("ᕙ(⇀‸↼‶)ᕗ", 4, player);
                 break;
-
             case 5:
-                clickCommand emote5 = new clickCommand("☜(˚▽˚)☞", 5, player);
-                emote5.chat();
-                player.closeInventory();
+                emote = new clickCommand("☜(˚▽˚)☞", 5, player);
                 break;
-
             case 6:
-                clickCommand emote6 = new clickCommand("☜(⌒▽⌒)☞", 6, player);
-                emote6.chat();
-                player.closeInventory();
+                emote = new clickCommand("☜(⌒▽⌒)☞", 6, player);
                 break;
-
             case 7:
-                clickCommand emote7 = new clickCommand("(╯°□°）╯︵ ┻━┻", 7, player);
-                emote7.chat();
-                player.closeInventory();
+                emote = new clickCommand("(╯°□°）╯︵ ┻━┻", 7, player);
+                break;
 
             default: //Used as the close button
+                emote = new clickCommand("", 8, player);
                 player.sendMessage(ChatColor.AQUA + "Closing menu.");
-                break;
+
         }
+        emote.chat();
+        player.closeInventory();
+
     }
 
     public class clickCommand
